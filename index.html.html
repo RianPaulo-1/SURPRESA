@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>Convite Especial 😻</title>
+  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: 'Dancing Script', cursive;
+      background: linear-gradient(to bottom right, #ffd6e8, #ffe4ec);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      text-align: center;
+      overflow: hidden;
+    }
+
+    h1 {
+      font-size: 2.8rem;
+      color: #d6336c;
+      margin-bottom: 20px;
+      text-shadow: 1px 1px 2px #fff;
+    }
+
+    .cat-image {
+      width: 200px;
+      margin-bottom: 30px;
+      border-radius: 20px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    }
+
+    .buttons {
+      position: relative;
+      height: 250px;
+      width: 100%;
+      max-width: 400px;
+      transform: translateX(-60px);
+    }
+
+    button {
+      padding: 15px 30px;
+      font-size: 1.2rem;
+      border: none;
+      border-radius: 50px;
+      cursor: pointer;
+      transition: 0.3s ease;
+      box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+    }
+
+    #sim {
+      background-color: #ff69b4;
+      color: white;
+      margin-right: 20px;
+    }
+
+    #sim:hover {
+      background-color: #ff85c1;
+      transform: scale(1.05);
+    }
+
+    #nao {
+      background-color: #999;
+      color: white;
+      position: absolute;
+    }
+
+    .heart {
+      position: absolute;
+      width: 20px;
+      height: 20px;
+      background: url('https://emoji.slack-edge.com/T024F8T53/heart/9c4f0e106e4b8e60.png') no-repeat center/contain;
+      animation: float 6s infinite;
+      opacity: 0.6;
+    }
+
+    @keyframes float {
+      0% {
+        transform: translateY(0) scale(1);
+        opacity: 0.6;
+      }
+      50% {
+        transform: translateY(-300px) scale(1.2);
+        opacity: 1;
+      }
+      100% {
+        transform: translateY(0) scale(1);
+        opacity: 0.6;
+      }
+    }
+  </style>
+</head>
+<body>
+  <h1>Eai Gata, bora sair comigo? 💐😽</h1>
+  
+  <img class="cat-image" src="convitee.jpg" alt="Gato segurando rosa">
+
+  <div class="buttons">
+    <button id="sim" onclick="showMessage()">SIM</button>
+    <button id="nao">NÃO</button>
+  </div>
+
+  <script>
+    const btnNao = document.getElementById("nao");
+    const area = document.querySelector(".buttons");
+
+    btnNao.addEventListener("mouseover", () => {
+      const areaWidth = area.offsetWidth - btnNao.offsetWidth;
+      const areaHeight = area.offsetHeight - btnNao.offsetHeight;
+
+      const randX = Math.floor(Math.random() * areaWidth);
+      const randY = Math.floor(Math.random() * areaHeight);
+
+      btnNao.style.left = `${randX}px`;
+      btnNao.style.top = `${randY}px`;
+    });
+    function showMessage() {
+      alert('OPA! Te pego às 20h! Senhorita Andressa 🤝🏽🤍');
+    }
+  </script>
+</body>
+</html>
